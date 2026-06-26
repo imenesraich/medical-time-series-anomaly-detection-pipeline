@@ -106,13 +106,3 @@ The project produces:
 
 This project is structured as an academic, multi-sprint workflow. Some folders contain generated artifacts, so it is helpful to keep source code, data, and results clearly separated.
 
-## Assessment of the organization
-
-Yes, the project is reasonably well organized for a multi-sprint academic project. The separation by sprint is clear and makes the workflow easy to follow. However, there are a few improvements that would make it even better:
-
-- Use a single root-level README as the main entry point (now added)
-- Standardize file and folder naming (for example, avoid spaces in folder names)
-- Separate source code, generated outputs, and data more explicitly
-- Add a short runbook for each sprint with expected commands and dependencies
-
-Overall, the structure is understandable and functional, but it would benefit from a bit more standardization and documentation consistency.
