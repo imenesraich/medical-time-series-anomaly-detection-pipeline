@@ -1,0 +1,75 @@
+{
+  "run_timestamp": "2026-05-12T20:53:32.593794",
+  "anomaly_definition": {
+    "type": "Signal Behavior",
+    "thresholds": {
+      "LOW_MOVEMENT_STD_THRESHOLD": 0.015,
+      "HIGH_ACCEL_MAG_THRESHOLD": 2.5,
+      "LOW_ACCEL_MAG_THRESHOLD": 0.05,
+      "GYRO_STABILITY_THRESHOLD": 0.008
+    },
+    "justification": "Anomalies are detected purely on physical signal thresholds (movement variance, acceleration magnitude, and gyroscope stability) rather than categorical activity labels."
+  },
+  "splits": {
+    "train": {
+      "split": "train",
+      "n_windows": 7352,
+      "tensor_shape": [
+        7352,
+        128,
+        9
+      ],
+      "n_subjects": 21,
+      "class_distribution": {
+        "LAYING": 1407,
+        "STANDING": 1374,
+        "SITTING": 1286,
+        "WALKING": 1226,
+        "WALKING_UPSTAIRS": 1073,
+        "WALKING_DOWNSTAIRS": 986
+      },
+      "anomaly_counts": {
+        "normal (0)": 6194,
+        "anomalie (1)": 1158
+      },
+      "anomaly_ratio": 0.1575,
+      "value_min": -3.32414,
+      "value_max": 3.339876,
+      "value_mean": 0.0,
+      "value_std": 1.0,
+      "issues": [
+        "Aucun problème détecté ✅"
+      ]
+    },
+    "test": {
+      "split": "test",
+      "n_windows": 2947,
+      "tensor_shape": [
+        2947,
+        128,
+        9
+      ],
+      "n_subjects": 9,
+      "class_distribution": {
+        "LAYING": 537,
+        "STANDING": 532,
+        "WALKING": 496,
+        "SITTING": 491,
+        "WALKING_UPSTAIRS": 471,
+        "WALKING_DOWNSTAIRS": 420
+      },
+      "anomaly_counts": {
+        "normal (0)": 2672,
+        "anomalie (1)": 275
+      },
+      "anomaly_ratio": 0.0933,
+      "value_min": -3.326186,
+      "value_max": 3.341923,
+      "value_mean": -0.006329,
+      "value_std": 0.965737,
+      "issues": [
+        "Aucun problème détecté ✅"
+      ]
+    }
+  }
+}

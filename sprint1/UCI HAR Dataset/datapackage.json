@@ -1,0 +1,133 @@
+{
+  "name": "uci-har-human-activity-recognition-smartphones",
+  "title": "Human Activity Recognition Using Smartphones",
+  "description": "Recordings of 30 subjects (age 19–48) performing 6 activities of daily living while carrying a waist-mounted Samsung Galaxy S II with embedded 3-axial accelerometer and gyroscope (50 Hz).",
+  "version": "1.0.0",
+  "created": "2013-01-01T00:00:00Z",
+  "homepage": "https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones",
+
+  "licenses": [
+    {
+      "name": "CC-BY-4.0",
+      "title": "Creative Commons Attribution 4.0 International",
+      "path": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  ],
+
+  "contributors": [
+    { "title": "Jorge L. Reyes-Ortiz", "role": "author" },
+    { "title": "Davide Anguita",       "role": "author" },
+    { "title": "Alessandro Ghio",      "role": "author" },
+    { "title": "Luca Oneto",           "role": "author" },
+    { "title": "Xavier Parra",         "role": "author" },
+    { "title": "UCI ML Repository",    "role": "publisher" }
+  ],
+
+  "keywords": [
+    "HAR",
+    "wearable",
+    "accelerometer",
+    "gyroscope",
+    "time-series",
+    "inertial sensors",
+    "activity recognition",
+    "multivariate",
+    "classification",
+    "50Hz"
+  ],
+  "sources": [
+    { "title": "UCI ML Repository",  "path": "https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones" },
+    { "title": "Reference Paper DOI","path": "https://doi.org/10.24432/C54S4K" }
+  ],
+
+  "resources": [
+    {
+      "name":        "feature-vectors",
+      "title":       "Feature Vectors (Train + Test)",
+      "description": "561 engineered time- and frequency-domain features per sliding window, normalized to [-1, 1]. Train: X_train.txt (7352 windows). Test: X_test.txt (2947 windows). Space-separated, no header.",
+      "path":        "UCI HAR Dataset/train/X_train.txt",
+      "format":      "txt",
+      "mediatype":   "text/plain",
+      "schema": {
+        "fields": [
+          {
+            "name":        "feature_{1..561}",
+            "type":        "number",
+            "description": "561 statistical features. Full list in features.txt.",
+            "constraints": { "minimum": -1.0, "maximum": 1.0 }
+          }
+        ]
+      }
+    },
+    {
+      "name":        "activity-labels",
+      "title":       "Activity Labels (Train + Test)",
+      "description": "Ground-truth activity class per window. Row-aligned with feature-vectors. Train: y_train.txt. Test: y_test.txt.",
+      "path":        "UCI HAR Dataset/train/y_train.txt",
+      "format":      "txt",
+      "mediatype":   "text/plain",
+      "schema": {
+        "fields": [
+          {
+            "name":        "activity_id",
+            "type":        "integer",
+            "constraints": { "minimum": 1, "maximum": 6 },
+            "description": "1=WALKING, 2=WALKING_UPSTAIRS, 3=WALKING_DOWNSTAIRS, 4=SITTING, 5=STANDING, 6=LAYING"
+          }
+        ]
+      }
+    },
+    {
+      "name":        "subject-ids",
+      "title":       "Subject IDs (Train + Test)",
+      "description": "Anonymized participant ID per window (1–30). Row-aligned with feature-vectors. Train: subject_train.txt. Test: subject_test.txt.",
+      "path":        "UCI HAR Dataset/train/subject_train.txt",
+      "format":      "txt",
+      "mediatype":   "text/plain",
+      "schema": {
+        "fields": [
+          {
+            "name":        "subject_id",
+            "type":        "integer",
+            "constraints": { "minimum": 1, "maximum": 30 }
+          }
+        ]
+      }
+    },
+    {
+      "name":        "raw-inertial-signals",
+      "title":       "Raw Inertial Signals (Train + Test)",
+      "description": "9 signal channels × 128 samples/window, normalized to [-1, 1]. Channels: body_acc_{x,y,z}, body_gyro_{x,y,z}, total_acc_{x,y,z}. Train: Inertial Signals/ under train/. Test: same structure under test/.",
+      "path":        "UCI HAR Dataset/train/Inertial Signals/",
+      "format":      "txt",
+      "mediatype":   "text/plain",
+      "schema": {
+        "fields": [
+          {
+            "name":        "sample_{1..128}",
+            "type":        "number",
+            "description": "128 time-domain samples per window at 50 Hz.",
+            "constraints": { "minimum": -1.0, "maximum": 1.0 }
+          }
+        ]
+      }
+    },
+    {
+      "name":        "activity-labels-mapping",
+      "title":       "Activity Label Mapping",
+      "description": "Integer-to-name lookup for the 6 activity classes. File: activity_labels.txt.",
+      "path":        "UCI HAR Dataset/activity_labels.txt",
+      "format":      "txt",
+      "mediatype":   "text/plain",
+      "schema": {
+        "fields": [
+          { "name": "activity_id",   "type": "integer" },
+          { "name": "activity_name", "type": "string",
+            "constraints": { "enum": ["WALKING","WALKING_UPSTAIRS","WALKING_DOWNSTAIRS","SITTING","STANDING","LAYING"] }
+          }
+        ],
+        "primaryKey": "activity_id"
+      }
+    }
+  ]
+}

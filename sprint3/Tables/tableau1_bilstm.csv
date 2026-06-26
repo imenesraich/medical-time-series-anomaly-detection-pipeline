@@ -1,0 +1,2 @@
+method,f1,precision,recall,accuracy,indiv_acc
+Supervised BiLSTM,81.24,78.93,83.71,87.42,76.67

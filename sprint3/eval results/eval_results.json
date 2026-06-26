@@ -1,0 +1,23 @@
+{
+  "best_epoch": 173,
+  "best_val_loss": 0.13836350423448227,
+  "stopped_early": true,
+  "threshold_tau": 1.2176138162612915,
+  "percentile": 85,
+  "signal_metrics": {
+    "tp": 255,
+    "fp": 418,
+    "fn": 20,
+    "tn": 2254,
+    "precision": 0.3789,
+    "recall": 0.927273,
+    "f1": 0.537975,
+    "accuracy": 0.851374
+  },
+  "individual_metrics": {
+    "subject_count": 0,
+    "threshold_pct": 0,
+    "individual_accuracy": null
+  },
+  "per_activity": {}
+}
